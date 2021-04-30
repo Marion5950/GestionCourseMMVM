@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.AddCourse">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout>
+                <Label Grid.Row="0" Grid.Column="0" Text="Nom course" FontSize="Title" TextColor="IndianRed"/>
+                <Entry Grid.Row="0" Grid.Column="1"  Text="{Binding Course.Nom}"/>
+                
+                <Label Grid.Row="1" Grid.Column="0" Text="Distance" FontSize="Title" TextColor="IndianRed"/>
+                <Entry Grid.Row="1" Grid.Column="1"  Text="{Binding Course.Distance}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Lieu" FontSize="Title" TextColor="IndianRed"/>
+                <Entry Grid.Row="2" Grid.Column="1"  Text="{Binding Course.Lieu}"/>
+                <Button Grid.Row="3" Grid.Column="0" Text="Valider"  WidthRequest="100" Command="{Binding ActionValiderInscrCourse}"/>
+                <Button Grid.Row="3" Grid.Column="1" Text="Retour"  WidthRequest="100" Command="{Binding ActionNavigationRetourCourse}"/>
+                
+            </StackLayout>
+       </Grid>
+        
+    </ContentPage.Content>
+    </ContentPage>

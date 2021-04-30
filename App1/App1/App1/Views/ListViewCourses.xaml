@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.ListViewCourses">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Text="Add Course" Grid.Row="0" WidthRequest="100" Command="{Binding ActionNavigationCourse}"/>
+            <Button Text="Add Coureur" Grid.Row="1" WidthRequest="100" Command="{Binding ActionNavigationCoureur}"/>
+            <ListView x:Name="ListeCourses" ItemsSource="{Binding Courses}" HasUnevenRows="True" Grid.Row="2" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Nom}" FontSize="24" TextColor="red" Grid.Row="0"/>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Lieu}" FontSize="13" TextColor="Black" Grid.Column="0" />
+                                    <Label Text="{Binding Distance}" FontSize="13" TextColor="Black" Grid.Column="1" />
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ListView x:Name="ListeCoureurs" ItemsSource="{Binding Coureurs}" HasUnevenRows="True" Grid.Row="3" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    
+                                    
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Nom}" FontSize="24" TextColor="red" Grid.Row="0"/>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Prenom}" FontSize="13" TextColor="Black" Grid.Column="0" />
+                                    <Label Text="{Binding Age}" FontSize="13" TextColor="Black" Grid.Column="1" />
+                                    <Label Text="{Binding Sexe}" FontSize="13" TextColor="Black" Grid.Column="2" />
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        
+       
+
+    </ContentPage.Content>
+</ContentPage>
